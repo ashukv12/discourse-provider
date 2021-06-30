@@ -19,7 +19,7 @@ This app will provide us with the API Key which will be needed to configure our 
 ## API Authentication
 
 1. To authenticate API, we need these credentials: api_key, api_username, and base_url.
-2. For this, go to `https://{defaultHost}/admin/api/keys and generate the credentials.
+2. For this, go to https://{defaultHost}/admin/api/keys and generate the credentials.
 3. A triplet of credentials: api_key, api_username, and base_url will be generated and shown on the page.
 
 ## Building The Provider
@@ -65,7 +65,7 @@ For Linux:
 ### Application Credential Integration in terraform
 
 1. Add `terraform` block and `provider` block as shown in [example usage](#example-usage).
-2. Get a pair of credentials: api_key, api_username, and base_url. For this, visit https://docs.discourse.org/.
+2. Get a pair of credentials: api_key, api_username, and base_url. For this, visit https://docs.discourse.org/ .
 3. Assign the above credentials to the respective field in the provider block.
 
 ### Basic Terraform Commands
@@ -74,26 +74,24 @@ For Linux:
 3. `terraform apply` - To execute the actions proposed in a Terraform plan. Apply the chages.
 
 #### Create User
-1. Add the user `email`, `name`, and `active`  in the respective field in resource block as shown in example usage.
-2. Initialize the terraform provider `terraform init`
-3. Check the changes applicable using `terraform plan` and apply using `terraform apply`
-4. You will see that an account activation mail has been sent to the user.
-5. Activate the account using the link provided in the mail, and you will see that a user has been successfully created.
+1. Add the user `email`, `name`, and `active`  in the respective field in resource block as shown in [example usage](#example-usage).
+2. Run the basic terraform commands.
+3. You will see that an account activation mail has been sent to the user.
+4. Activate the account using the link provided in the mail, and you will see that a user has been successfully created.
 
 #### Update the user
-  User is allowed to update `name`, and `active`. Update the data, i.e., `name` or `active` of the user in the in the resource block of `main.tf` file and apply using `terraform apply`
+ 
+User is allowed to update `name` and `active` only. Update the data of the user in the `resource block` as show in [example usage](#example-usage) and run the basic terraform commands to update user. Change the `active` field value from `false` to deactivate and `true` to activate and run `terraform apply`
 
 #### Read the User Data
-Add `data` and `output` blocks in the `main.tf` file and run `terraform plan` to read user data
-
-#### Activate/Deactivate the user
-Change the `active` field value from `false` to deactivate and `true` to activate and run `terraform apply`.
+Add `data` and `output` blocks  as shown in the [example usage](#example-usage) and run the basic terraform commands.
+.
 
 #### Delete the user
-Delete the `resource` block of the particular user from `main.tf` file and run `terraform apply`.
+Delete the `resource` block of the user and run `terraform apply`.
 
 #### Import a User Data
-1. Write manually a resource configuration block for the User in `main.tf`, to which the imported object will be mapped.
+1. Write manually a resource configuration block for the User as shown in [example usage](#example-usage), to which the imported object will be mapped.
 2. Run the command `terraform import discourse_user.user1 [EMAIL_ID]`
 3. Check for the attributes in the `.tfstate` file and fill them accordingly in resource block.
 
@@ -131,23 +129,11 @@ output "user1" {
 }
 ```
 
-## Undocumented APIs being used here:
-
-#### Update a user by username
-
-`https://{defaultHost}/u/{username}.json`
-
-#### Activate the user
-
-`http://{defaultHost}/admin/users/{USER_ID}/activate.json`
-
-#### Get email id by using username 
-
-`https://{defaultHost}/u/{username}/emails.json`
-
-
 ## Argument Reference:
 
+* `api_key` (Required, String) -  The Discourse API KEY. This may also be set via the "DISCOURSE_API_KEY" environment variable.
+* `api_username` (Required, String) -  The Discourse API USERNAME. This may also be set via the "DISCOURSE_API_USERNAME" environment variable.
+* `base_url` (Required, String) -   The Discourse BASE URL. This may also be set via the "DISCOURSE_BASE_URL" environment variable.
 * `email`       (Required, String)  - The email address of the user.
 * `name`           (Optional, String)  - Name of the user in Discourse. 
 * `active`         (Optional, Boolean) - If set to false, the user will be deactivated.
