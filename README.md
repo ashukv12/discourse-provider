@@ -131,9 +131,9 @@ output "user1" {
 
 ## Argument Reference:
 
-* `api_key` (Required, String) -  The Discourse API KEY. This may also be set via the "DISCOURSE_API_KEY" environment variable.
-* `api_username` (Required, String) -  The Discourse API USERNAME. This may also be set via the "DISCOURSE_API_USERNAME" environment variable.
-* `base_url` (Required, String) -   The Discourse BASE URL. This may also be set via the "DISCOURSE_BASE_URL" environment variable.
+* `api_key` (Required, String) -  The Discourse API KEY. This may also be set via the `DISCOURSE_API_KEY` environment variable.
+* `api_username` (Required, String) -  The Discourse API USERNAME. This may also be set via the `DISCOURSE_API_USERNAME` environment variable.
+* `base_url` (Required, String) -   The Discourse BASE URL. This may also be set via the `DISCOURSE_BASE_URL` environment variable.
 * `email`       (Required, String)  - The email address of the user.
 * `name`           (Optional, String)  - Name of the user in Discourse. 
 * `active`         (Optional, Boolean) - If set to false, the user will be deactivated.
