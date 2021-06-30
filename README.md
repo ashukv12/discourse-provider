@@ -19,7 +19,7 @@ This app will provide us with the API Key which will be needed to configure our 
 ## API Authentication
 
 1. To authenticate API, we need these credentials: api_key, api_username, and base_url.
-2. For this, go to https://{defaultHost}/admin/api/keys and generate the credentials.
+2. For this, go to `https://{defaultHost}/admin/api/keys` and generate the credentials.
 3. A triplet of credentials: api_key, api_username, and base_url will be generated and shown on the page.
 
 ## Building The Provider
