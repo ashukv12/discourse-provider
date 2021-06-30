@@ -1,5 +1,3 @@
-# Terraform Discourse Provider
-
 This terraform provider enables create, read, update, delete, and import operations for discourse users.
 
 ## Requirements
@@ -14,11 +12,16 @@ This terraform provider enables create, read, update, delete, and import operati
 ### Setup 
 
 1. Create a discourse account with your required subscription [Standard Plan/Business Account](https://www.discourse.org/pricing)<br>
-2. Sign in to the [discourse account](https://www.discourse.org/)<br>
-3. Go to `Dashboard`. Click on `API`. Create `New API Key`. For our purpose we need to create an API Key. <br>
+2. Go to `Dashboard -> API -> API Key`. For our purpose we need to create an API Key. <br>
 
 This app will provide us with the API Key which will be needed to configure our provider and make request. <br>
  
+## API Authentication
+
+1. authenticate API, we need a pair of credentials:  api_key,api_username, se_url, ifyUserID and expensifyUserSecret.
+For this, go to https://www.expensify.com/tools/integrations/ and generate the credentials.
+A pair of credentials: expensifyUserID and expensifyUserSecret will be generated and shown on the page.
+
 ## Building The Provider
 
 1. Clone the repository, add all the dependencies and create a vendor directory that contains all dependencies. For this, run the following commands: 
