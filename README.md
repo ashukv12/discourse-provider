@@ -18,9 +18,9 @@ This app will provide us with the API Key which will be needed to configure our 
  
 ## API Authentication
 
-1. authenticate API, we need a pair of credentials:  api_key,api_username, se_url, ifyUserID and expensifyUserSecret.
-For this, go to https://www.expensify.com/tools/integrations/ and generate the credentials.
-A pair of credentials: expensifyUserID and expensifyUserSecret will be generated and shown on the page.
+1. To authenticate API, we need these credentials: api_key, api_username, and base_url.
+2. For this, go to `https://{defaultHost}/admin/api/keys and generate the credentials.
+3. A triplet of credentials: api_key, api_username, and base_url will be generated and shown on the page.
 
 ## Building The Provider
 
@@ -64,7 +64,7 @@ For Linux:
 
 ### Application Credential Integration in terraform
 
-1. Add terraform block and provider block as shown in example usage.
+1. Add `terraform` block and `provider` block as shown in [example usage](#example-usage).
 2. Get a pair of credentials: api_key, api_username, and base_url. For this, visit https://docs.discourse.org/.
 3. Assign the above credentials to the respective field in the provider block.
 
@@ -98,7 +98,8 @@ Delete the `resource` block of the particular user from `main.tf` file and run `
 3. Check for the attributes in the `.tfstate` file and fill them accordingly in resource block.
 
 
-## Example Usage
+## Example Usage<a id="example-usage"></a>
+
 ```terraform
 terraform {
   required_providers {
